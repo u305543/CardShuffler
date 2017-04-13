@@ -14,21 +14,15 @@ namespace CardShuffler
         {
             ArrayList deck = createDeck();
 
-            foreach (string card in deck)
-            {
-                Console.Write(card + ", ");
-            }
-            Console.Write("\n");
-            Console.WriteLine(deck.Count);
+            writeToConsole(deck);
 
             shuffleDeck(deck);
 
-            foreach (string card in deck)
-            {
-                Console.Write(card + ", ");
-            }
-            Console.Write("\n");
-            Console.WriteLine(deck.Count);
+            writeToConsole(deck);
+
+            shuffleDeck(deck);
+
+            writeToConsole(deck);
         }
         static public void shuffleDeck(ArrayList arrlist)
         {
@@ -58,6 +52,16 @@ namespace CardShuffler
             }
 
             return deck;
+        }
+
+        static private void writeToConsole(ArrayList deck)
+        {
+            foreach (string card in deck)
+            {
+                Console.Write(card + " ");
+            }
+            Console.Write("\n");
+            Console.WriteLine("Total cars in deck: " + deck.Count);
         }
     }
 }
