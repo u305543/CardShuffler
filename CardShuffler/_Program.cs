@@ -12,11 +12,13 @@ namespace CardShuffler
 
             Deck deck = new Deck();
 
-            deck.print();
+            ArrayList cards = deck.createDeck();
 
-            deck.shuffle();
+            deck.writeToConsole(cards);
 
-            deck.print();
+            deck.shuffleDeck(cards);
+
+            deck.writeToConsole(cards);
         
         }
         
